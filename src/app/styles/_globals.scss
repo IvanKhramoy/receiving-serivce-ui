@@ -1,6 +1,4 @@
-@use '../../shared/styles/helpers/_functions' as *;
-@use '../../shared/styles/helpers/_mixins' as *;
-@use '../../shared/styles/helpers/_media' as *;
+@use '../../shared/styles/helpers' as *;
 
 html {
   &.is-lock {
@@ -19,8 +17,8 @@ body {
   // min-height: 100%;
 
   letter-spacing: -0.03em;
-  color: var(--color-gray-50);
-  background-color: var(--color-dark);
+  color: var(--color-dark-1);
+  background-color: var(--color-dark-1);
 }
 
 main {
@@ -41,7 +39,6 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
   font-weight: 500;
-  font-family: var(--font-family-accent);
 }
 
 h4, .h4,
@@ -101,7 +98,7 @@ a {
 }
 
 :focus-visible { // состояние фокусировки (по табу)
-  outline: rem(2) solid var(--color-light);
+  outline: rem(2) solid var(--color-white);
   outline-offset: rem(4);
   transition-duration: 0s !important;
 }

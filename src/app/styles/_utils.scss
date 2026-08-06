@@ -1,0 +1,24 @@
+@use '../../shared/styles/helpers' as *;
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 4);
+  margin-inline: auto;
+  padding: 0 var(--container-padding-x);
+  // padding:
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}

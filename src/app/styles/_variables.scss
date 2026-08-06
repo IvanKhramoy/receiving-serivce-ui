@@ -1,9 +1,7 @@
-@use '../../shared/styles/helpers/_functions' as *;
-@use '../../shared/styles/helpers/_mixins' as *;
-@use '../../shared/styles/helpers/_media' as *;
+@use '../../shared/styles/helpers' as *;
 
 :root {
-  --color-white: #FFFFFF;
+  --color-white: #FDFFF4;
   --color-black: #000000;
 
   --color-dark-1: #1E1E1E;
@@ -13,6 +11,8 @@
   --color-gray-2: #D9D9D9;
   --color-gray-3: #B3B3B3;
   --color-gray-4: #757575;
+
+  --color-accent: #7de7ff;
 
   --input-height: 40px;
 
