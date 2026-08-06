@@ -1,0 +1,33 @@
+@use '../../shared/styles/helpers/_functions' as *;
+@use '../../shared/styles/helpers/_mixins' as *;
+@use '../../shared/styles/helpers/_media' as *;
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  --color-dark-1: #1E1E1E;
+  --color-dark-2: #2C2C2C;
+
+  --color-gray-1: #F5F5F5;
+  --color-gray-2: #D9D9D9;
+  --color-gray-3: #B3B3B3;
+  --color-gray-4: #757575;
+
+  --input-height: 40px;
+
+  --transition-duration: 0.2s;
+
+  --border: #{rem(1)} solid var(--color-gray-2);
+
+
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Kumbh Sans', sans-serif;
+
+  --container-width: #{rem(1600)}; //используем #{} т.к. sass некорректно обрабатывает функцие которые используются в значениях css переменных
+  --container-padding-x: #{rem(16)};
+
+  @include laptop {
+    --container-width: #{rem(1280)};
+  }
+}
