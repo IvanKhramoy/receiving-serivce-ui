@@ -1,4 +1,5 @@
 import styles from './Field.module.scss';
+import {useState} from "react";
 
 const Field = (props) => {
 
@@ -10,11 +11,16 @@ const Field = (props) => {
     type,
     placeholder = '',
     autocomplete,
-    needsWrapperFormInput = false,
-    showPassword,
-    handleTogglePassword,
     children
   } = props;
+
+  const [showPassword, setShowPassword] = useState(false);
+  const isPassword = type === 'password';
+  const inputType = (isPassword && showPassword) ? 'text' : type;
+
+  const handleTogglePassword = () => {
+    setShowPassword((prevState) => !prevState);
+  }
 
   return (
     <div className={`${styles.field} ${className}`}>
@@ -26,12 +32,12 @@ const Field = (props) => {
         {isRequired && (<span className={styles.requiredStar}> *</span>)}
       </label>
 
-      {!needsWrapperFormInput ?
+      {!isPassword ?
         <input
           className={styles.input}
-          type={type}
+          type={inputType}
           name={name}
-          id="login"
+          id={id}
           placeholder={placeholder}
           autoComplete={autocomplete}
           required
@@ -40,9 +46,9 @@ const Field = (props) => {
         <div className={styles.passwordInputWrapper}>
           <input
             className={styles.input}
-            type={type}
+            type={inputType}
             name={name}
-            id="login"
+            id={id}
             placeholder={placeholder}
             autoComplete={autocomplete}
             required

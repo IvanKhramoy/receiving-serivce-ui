@@ -1,5 +1,5 @@
 import styles from './LoginPage.module.scss'
-import LoginForm from "@/features/auth-by-login";
+import LoginForm from "@/features/auth-by-login/ui/index.js";
 
 const LoginPage = () => {
   return (
@@ -21,7 +21,7 @@ const LoginPage = () => {
 
       <footer className={styles.footer}>
         <div className="container">
-          <div className="footerBody">
+          <div className={styles.footerBody}>
             <p className={styles.copyright}>© ОАО "ReceivingService", 2026 г.</p>
           </div>
         </div>
