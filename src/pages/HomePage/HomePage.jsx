@@ -1,15 +1,15 @@
 import kotekImage from '../../shared/assets/images/kotek.jpg';
-const LoginPage = () => {
+const HomePage = () => {
   return (
     <>
-      <h1>pizdets</h1>
+      <h1>!</h1>
       <img
         src={kotekImage}
-        alt="hui"
+        alt=""
 
       />
     </>
   )
 }
 
-export default LoginPage;
+export default HomePage;

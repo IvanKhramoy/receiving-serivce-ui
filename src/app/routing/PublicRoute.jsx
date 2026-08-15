@@ -14,3 +14,20 @@
 // };
 //
 // export default PublicRoute;
+
+
+
+// app/routing/CatchAllRoute.jsx
+/*
+import { Navigate } from 'react-router-dom';
+import { useAuthStore } from '@/entities/user/model';
+import NotFoundPage from '@/pages/NotFoundPage';
+
+const CatchAllRoute = () => {
+  const accessToken = useAuthStore((state) => state.accessToken);
+  return accessToken ? <NotFoundPage /> : <Navigate to="/login" replace />;
+};
+
+export default CatchAllRoute;
+jsx
+<Route path="*" element={<CatchAllRoute />} />*/

@@ -5,11 +5,14 @@ import ProtectedRoute from "./ProtectedRouting";
 
 const Router = () => {
   return (
+    // следит за адресной строкой через HistoryAPI; Routes - контейнер, смотрит на текущий URL
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<HomePage />} />
+        </Route>
         {/*<Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />*/}
 
         <Route path="*" element={<LoginPage />} />

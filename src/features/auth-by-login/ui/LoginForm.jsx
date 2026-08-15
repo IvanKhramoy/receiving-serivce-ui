@@ -29,6 +29,7 @@
         setTokens(accessToken, refreshToken);
         toast.success('Вход выполнен успешно!');
         navigate('/'); //change current URL
+        // navigate('/asn');
       } catch (error) {
         error.response?.status === 401
         ? setLoginError(true) : setLoginError(false)

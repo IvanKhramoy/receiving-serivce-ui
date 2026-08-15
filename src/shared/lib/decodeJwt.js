@@ -11,3 +11,12 @@ export const decodeJwt = (token) => {
   }
 }
 
+export const isTokenExpired = (token) => {
+  if (!token) return true;
+  const claims = decodeJwt(token);
+  if (!claims || !claims.exp) return true;
+
+  // claims.exp в секундах, Date.now() в миллисекундах
+  return claims.exp * 1000 < Date.now();
+};
+
