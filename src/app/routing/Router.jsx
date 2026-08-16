@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import LoginPage from "@/pages/LoginPage";
 import HomePage from '@/pages/HomePage';
 import ProtectedRoute from "./ProtectedRouting";
@@ -13,9 +13,8 @@ const Router = () => {
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<HomePage />} />
         </Route>
-        {/*<Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />*/}
 
-        <Route path="*" element={<LoginPage />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );

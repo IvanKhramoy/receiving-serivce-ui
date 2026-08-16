@@ -22,12 +22,12 @@ const useAuthStore = create((set) => ({ //set - way to update state
   refreshToken: tokenStorage.getRefreshToken(),
   user: initialAccessToken ? buildUserFromToken(initialAccessToken) : null,
 
-  setTokens: (accessToken, refreshToken) => {
+  setTokens: (accessToken, refreshToken) => { // автоматический ререндер
     tokenStorage.setTokens(accessToken, refreshToken);
     set({ accessToken, refreshToken, user: buildUserFromToken(accessToken) })
   },
 
-  logout: () => {
+  logout: () => { // +блокировка доступа
     tokenStorage.clearTokens();
     set( {accessToken: null, refreshToken: null, user: null} )
   }

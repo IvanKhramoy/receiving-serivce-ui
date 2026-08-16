@@ -50,7 +50,11 @@ httpClient.interceptors.response.use(
 
         const { data } = await axios.post(
           `${import.meta.env.VITE_API_BASE_URL}/api/auth/refresh`, // Полный URL нужен, т.к. чистый axios не знает про твой baseURL
-          { refreshToken }
+          // JSON.stringify(refreshToken),
+          refreshToken,
+          { headers: {
+            'Content-Type': 'text/plain',
+              'X-Idempotency-Key': crypto.randomUUID(),}}
         );
 
         const { accessToken, refreshToken: newRefreshToken } = data;
