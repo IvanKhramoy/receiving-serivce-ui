@@ -1,0 +1,218 @@
+@use '../../shared/styles/helpers' as *;
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.personBtn {
+//  padding: rem(7) rem(10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: rem(45);
+  gap: rem(10);
+  background-color: var(--color-white);
+  transition: all 0.2s ease;
+
+  @include hover {
+    scale: 1.01;
+  }
+
+  &.isExpanded {
+    &::after {
+      rotate: -180deg;
+    }
+  }
+
+  &:not(.isExpanded)_ {
+    .dropdownMenu {
+      scale: 0;
+    }
+  }
+
+  @include mobile-above {
+    &::after {
+      content: '';
+      background: url(../../shared/assets/icons/arrow_down_black.svg) center/contain no-repeat;
+      width: rem(20);
+      height: rem(20);
+      //    transition-duration: 0.2ms;
+      transition: all 0.2s ease;
+      //
+      //    &:hover + .personImage {
+      //      scale: 1.05;
+      //      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+      //    }
+    }
+  }
+
+
+
+}
+
+.personImage {
+  @include square(rem(80));
+
+  @include mobile {
+    @include square(rem(70))
+  }
+
+  border: rem(4) solid var(--color-gray-2);
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.2s ease;
+  //  @include hover {
+  //    scale: 1.05;
+  //    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  //  }
+}
+
+.dropdownMenu {
+  // TODO: переписать на position-anchor вместо position
+  display: flex;
+  flex-direction: column;
+  border-radius: rem(10);
+  border: rem(1) solid var(--color-gray-2);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + #{rem(10)});
+  right: 0;
+  padding: rem(40) rem(50);
+  transform-origin: 100% 0;
+  gap: rem(20);
+  scale: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+  background-color: var(--color-white);
+
+  @include mobile {
+    padding: rem(20) rem(30);
+  }
+
+  &.isExpanded {
+    scale: 1;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(15);
+}
+
+.userName {
+  font-size: rem(34);
+  color: var(--color-gray-4);
+  font-weight: 200;
+
+}
+
+.userRole {
+  font-size: rem(28);
+  color: var(--color-gray-4);
+  font-weight: 200;
+}
+
+.userEmail {
+  font-size: rem(28);
+  color: var(--color-gray-4);
+  font-weight: 200;
+}
+
+.actionsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: rem(15)
+}
+
+.actionItem {
+
+}
+
+.settingsButton {
+  background-color: inherit;
+  color: var(--color-gray-4);
+  position: relative;
+  font-size: rem(30);
+
+  @include hover {
+    color: var(--color-dark-2);
+    &::before {
+      background-color: var(--color-dark-2);
+    }
+  }
+
+  &::before {
+    width: rem(30);
+    height: rem(30);
+    content: '';
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: calc(100% + #{rem(10)});
+    -webkit-mask: url('../../shared/assets/icons/mehanizm_1zpvbfck5cfk.svg') center / contain no-repeat;
+    mask: url('../../shared/assets/icons/mehanizm_1zpvbfck5cfk.svg') center / contain no-repeat;
+
+    background-color: var(--color-gray-4);
+    transition: background-color 0.2s ease;
+  }
+}
+
+.exitButton {
+  background-color: inherit;
+  color: var(--color-gray-4);
+  position: relative;
+  font-size: rem(30);
+
+  @include hover {
+    color: var(--color-error-red);
+    &::before {
+      background-color: var(--color-error-red);
+    }
+  }
+  &::before {
+    width: rem(34);
+    height: rem(34);
+    content: '';
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: calc(100% + #{rem(8)});
+    -webkit-mask: url('../../shared/assets/icons/exit-svgrepo-com.svg') center / contain no-repeat;
+    mask: url('../../shared/assets/icons/exit-svgrepo-com.svg') center / contain no-repeat;
+
+    background-color: var(--color-gray-4);
+
+    transition: background-color 0.2s ease;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: rem(2);
+  background-color: var(--color-gray-4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

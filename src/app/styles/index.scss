@@ -5,10 +5,10 @@
 @use './fonts';
 
 // 3. Сброс стандартных стилей браузера (normalize/reset)
-@use './normalize';
 
 // 4. Вспомогательные глобальные классы (.container, .visually-hidden)
 @use './utils';
 
 // 5. Базовые правила для тегов (html, body, a, button)
+@use './normalize';
 @use './globals';

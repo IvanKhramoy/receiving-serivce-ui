@@ -11,8 +11,9 @@
   --color-gray-2: #d7d7d7;
   --color-gray-3: #B3B3B3;
   --color-gray-4: #757575;
+  --color-gray-5: #525252;
 
-  --color-accent-standart: #1960b3;
+  --color-accent-standart: #579aff;
 
   --color-error-red: #cd0000;
 
@@ -28,7 +29,7 @@
   --font-family-accent: 'Kumbh Sans', sans-serif;
 
   --container-width: #{rem(1600)}; //используем #{} т.к. sass некорректно обрабатывает функцие которые используются в значениях css переменных
-  --container-padding-x: #{rem(16)};
+  --container-padding-x: #{rem(24)};
 
   @include laptop {
     --container-width: #{rem(1280)};

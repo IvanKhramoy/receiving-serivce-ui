@@ -21,7 +21,7 @@ export const useInitAuth = () => {
   // инициализация и рефреш при старте
   useEffect(() => {
     const initAuth = async () => {
-      const { accessToken, refreshToken, setTokens,  } = useAuthStore.getState();
+      const { accessToken, refreshToken, setTokens, } = useAuthStore.getState();
 
       if (refreshToken && (!accessToken || isTokenExpired(accessToken))) {
         try {
