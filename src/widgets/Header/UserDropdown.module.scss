@@ -23,12 +23,12 @@
       rotate: -180deg;
     }
   }
-
-  &:not(.isExpanded)_ {
-    .dropdownMenu {
-      scale: 0;
-    }
-  }
+//
+//  &:not(.isExpanded) {
+//    .dropdownMenu {
+//      scale: 0;
+//    }
+//  }
 
   @include mobile-above {
     &::after {

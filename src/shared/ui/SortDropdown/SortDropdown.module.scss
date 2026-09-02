@@ -1,0 +1,71 @@
+@use '../../styles/helpers' as *;
+
+.sorting {
+    position: relative;
+}
+
+.sortingButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    gap: rem(10)
+}
+
+.sortingIcon {
+    @include square(rem(36));
+}
+
+.sortingTitle {
+    color: var(--color-accent-dark);
+    font-size: rem(24);
+
+    @include hover {
+        color: var(--color-accent-darker);
+    }
+}
+
+.optionsList {
+    position: absolute;
+    top: calc(100% + #{rem(10)});
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border: rem(1) solid var(--color-gray-2);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border-radius: rem(10);
+    padding: rem(20);
+    transform-origin: 0 0;
+    scale: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+    background-color: var(--color-white);
+//    padding: rem(20);
+//    top: calc(100% + rem(5));
+
+    &.isExpanded {
+        scale: 100%;
+        opacity: 1;
+    }
+}
+
+.option {
+    user-select: none;
+    cursor: pointer;
+    font-size: rem(24);
+    padding-inline: rem(10);
+    border-radius: rem(5);
+    transition: all 0.2s ease;
+
+    &:nth-child(even) {
+        background-color: var(--color-gray-1);
+    }
+
+    @include hover {
+        color: var(--color-accent-dark)
+    }
+}
+
+.selectedOption {
+
+}

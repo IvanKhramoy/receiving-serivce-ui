@@ -6,7 +6,7 @@ export const refreshTokensRequest = async (refreshToken) => {
     refreshToken,
     {
       headers: {
-        'Content-Type': 'plain/text',
+        'Content-Type': 'text/plain',
         'X-Idempotency-Key': crypto.randomUUID(),
       },
     }

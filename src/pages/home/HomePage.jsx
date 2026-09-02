@@ -6,17 +6,12 @@ import {
 } from "@/entities/user/model";
 import {useNavigate} from "react-router-dom";
 
-const HomePage = () => {
+const  HomePage = () => {
   const navigate = useNavigate();
   const user = useAuthStore((state) => state.user);
-  const isManager = useAuthStore(selectIsManager) || useAuthStore(selectIsAdmin);
-  console.log(isManager);
+  const isManager = useAuthStore((state) => selectIsManager(state) || selectIsAdmin(state));
 
   const isHasActiveTask = false;
-
-  const qwerty = () => {
-    console.log('23123')
-  }
 
   return (
     <>
@@ -24,10 +19,10 @@ const HomePage = () => {
         <h2 className="visually-hidden">Главная</h2>
         <ul className={styles.employeeInformation}>
           <li className={styles.informationItem}>
-            <span className={styles.employeeRole}>{`Должность: ${user.authorities}`}</span>
+            <span className={styles.employeeRole}>{`Должность: ${user?.authorities[0]}`}</span>
           </li>
           <li className={styles.informationItem}>
-            <span className={styles.warehouseId}>{`ID склада: ${user.warehouseId}`}</span>
+            <span className={styles.warehouseId}>{`ID склада: ${user?.warehouseId}`}</span>
           </li>
         </ul>
         <div className={styles.body}>

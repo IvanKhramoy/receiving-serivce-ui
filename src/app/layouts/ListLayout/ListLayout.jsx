@@ -7,7 +7,7 @@ const ListLayout = () => {
     <>
       <ListHeader />
       <main>
-        <Outlet/> {/* Сюда вставятся ReceiptPage и т.д. */}
+        <Outlet/> {/* Сюда вставятся receipt и т.д. */}
       </main>
     </>
   )

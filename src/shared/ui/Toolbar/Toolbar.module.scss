@@ -1,0 +1,10 @@
+@use '@/shared/styles/helpers' as *;
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  border-bottom: rem(1) solid var(--color-gray-3);
+  padding-block: rem(20);
+}
+

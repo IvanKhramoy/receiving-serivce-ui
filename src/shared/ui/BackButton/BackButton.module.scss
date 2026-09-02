@@ -1,0 +1,26 @@
+@use '../../styles/helpers' as *;
+
+.backButton {
+//  transition: all 0.2s ease;
+  @include hover {
+    .iconWrapper {
+      translate: rem(-3);
+    }
+  }
+}
+
+.iconWrapper {
+//  display: block;
+//  justify-content: center;
+//  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrowIcon {
+  width: rem(30);
+  height: rem(30);
+}
+
+.leftArrowIcon {
+
+}

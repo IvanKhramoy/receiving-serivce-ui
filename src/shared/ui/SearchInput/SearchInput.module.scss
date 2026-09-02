@@ -1,0 +1,16 @@
+@use '../../styles/helpers' as *;
+
+.searchForm {
+  display: flex;
+}
+
+.searchInput {
+  width: 100%;
+//  min-width: rem(100);
+//  max-width: rem(100);
+//  min-width: rem(200);
+  padding: rem(10) rem(20);
+  border-radius: rem(20);
+  border: rem(1) solid var(--color-gray-3);
+  font-size: rem(24);
+}

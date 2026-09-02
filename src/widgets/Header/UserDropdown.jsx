@@ -6,31 +6,35 @@ import {
   useAuthStore
 } from "@/entities/user/model/index.js";
 import kotekImage from '../../shared/assets/images/sakura.jpg';
+import useOutsideClick from "@/shared/hooks/useOutsideClick.js";
 
 const UserDropdown = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const dropdownRef = useRef(null);
-  const show = true;
 
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
-  const isManager = useAuthStore(selectIsManager) || useAuthStore(selectIsAdmin);
+  const isManager = useAuthStore((state) => selectIsManager(state) || selectIsAdmin(state));
+
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  //       setIsExpanded(false)
+  //     }
+  //   }
+  //
+  //   if (isExpanded) {
+  //     // document.addEventListener('mousedown', handleClickOutside);
+  //     document.addEventListener('pointerdown', handleClickOutside);
+  //   }
+  //   return () => {
+  //     document.removeEventListener('pointerdown', handleClickOutside);
+  //   };
+  //  }, [isExpanded]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsExpanded(false)
-      }
-    }
-
-    if (isExpanded) {
-      // document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('pointerdown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('pointerdown', handleClickOutside);
-    };
-   }, [isExpanded]);
+    useOutsideClick(dropdownRef, isExpanded, setIsExpanded);
+  }, [dropdownRef ,isExpanded]);
 
   const onClick = () => {
     setIsExpanded(!isExpanded);
@@ -56,7 +60,7 @@ const UserDropdown = () => {
       </button>
 
 
-      <div className={`${styles.dropdownMenu} ${isExpanded ? styles.isExpanded : ''}`}>
+      <div className={`${styles.dropdownMenu} ${isExpanded ? styles.isExpanded : ''}`} aria-hidden={!isExpanded}>
         <div className={styles.userInfo}>
           <p className={styles.userName}>{user?.nickname || 'Пользователь'}</p>
           <p className={styles.userRole}>{`Должность: ${user?.authorities}`}</p>

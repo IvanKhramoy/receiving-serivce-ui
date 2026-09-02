@@ -1,7 +1,7 @@
 @use '../../shared/styles/helpers' as *;
 
 .header {
-  padding-block: 1.25rem;
+  padding-block: rem(30);
 }
 
 .headerInner {
@@ -13,6 +13,29 @@
 .title {
   padding-block: fluid(30, 15);
   font-weight: 700;
-  color: var(--color-accent-standart);
+  color: var(--color-accent-dark);
   font-size: fluid(46, 26);
+}
+
+.headerContent {
+//  display: grid;
+//  grid-template-columns: auto 1fr auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* 3 колонки: края одинаковые, центр по контенту */
+  align-items: center;
+  width: 100%;
+}
+
+.pageTitle {
+  font-size: fluid(30, 24);
+//  margin-left: auto;   /* Выталкивает левый край к центру */
+//  margin-right: auto;
+  grid-column: 2;
+  justify-self: center;
+}
+
+.buttonBack {
+//  margin-right: auto;
+  grid-column: 1;
+  justify-self: start;
 }

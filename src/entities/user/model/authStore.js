@@ -36,13 +36,13 @@ const useAuthStore = create((set) => ({ //set - way to update state
 }))
 
 export const selectIsManager = (state) => {
-  if (!state.user || !state.user.authorities) return false;
-  return state.user.authorities.includes('MANAGER');
+  if (!state.user || !state.user?.authorities) return false;
+  return state.user?.authorities.includes('MANAGER');
 }
 
 export const selectIsAdmin = (state) => {
-  if (!state.user || !state.user.authorities) return false;
-  return state.user.authorities.includes('ADMIN');
+  if (!state.user || !state.user?.authorities) return false;
+  return state.user?.authorities.includes('ADMIN');
 }
 
 export default useAuthStore;
