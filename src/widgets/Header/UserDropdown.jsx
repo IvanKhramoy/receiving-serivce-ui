@@ -32,9 +32,11 @@ const UserDropdown = () => {
   //   };
   //  }, [isExpanded]);
 
-  useEffect(() => {
-    useOutsideClick(dropdownRef, isExpanded, setIsExpanded);
-  }, [dropdownRef ,isExpanded]);
+  // useEffect(() => {
+  //   useOutsideClick(dropdownRef, isExpanded, setIsExpanded);
+  // }, [dropdownRef ,isExpanded]);
+
+  useOutsideClick(dropdownRef, isExpanded, setIsExpanded);
 
   const onClick = () => {
     setIsExpanded(!isExpanded);

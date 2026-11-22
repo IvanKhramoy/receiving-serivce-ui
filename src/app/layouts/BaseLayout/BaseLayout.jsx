@@ -6,7 +6,7 @@ const BaseLayout = () => {
     <>
       <Outlet/>
       <footer className={styles.footer}>
-        © {new Date().getFullYear()} PizdetsSolutions.
+        © {new Date().getFullYear()} ReceivingService.
       </footer>
     </>
     // Footer

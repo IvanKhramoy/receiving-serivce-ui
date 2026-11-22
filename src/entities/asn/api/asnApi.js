@@ -15,15 +15,15 @@ const API_PREFIX = '/api/asns';
  */
 
 export const fetchAsns = async ({page = 0, size = 10, sort, status, vendor, fromDate, toDate} = {}) => {
-  const { data} = httpClient.get(`${API_PREFIX}/search`, {
+  const { data } = await httpClient.get(`${API_PREFIX}/search`, {
     params: { // параметры url
       page,
       size,
       ...(sort && { sort }),
       ...(status && { status }),
       ...(vendor && { vendor }),
-      ...(fromDate && { fromDate: fromDate }),
-      ...(toDate && { toDate: toDate }),
+      ...(fromDate && { from_date: fromDate }),
+      ...(toDate && { to_date: toDate }),
     }
   });
   return data;
