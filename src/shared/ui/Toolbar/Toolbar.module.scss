@@ -1,10 +1,23 @@
 @use '@/shared/styles/helpers' as *;
 
 .toolbar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+//  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   border-bottom: rem(1) solid var(--color-gray-3);
   padding-block: rem(20);
+}
+
+.sortSlot {
+  flex-shrink: 0;
+}
+
+.searchSlot {
+  flex: 1;
+  min-width: 0;
+}
+
+.filterSlot {
+  flex-shrink: 0;
 }
 

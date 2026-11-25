@@ -54,7 +54,7 @@ const SortDropdown = (props) => {
       >
         {options.map((option) => (
           <li
-            className={`${styles.option} ${option.value === value ? styles.selectedOption : ''}`}
+            className={`${styles.option} ${option.label === value ? styles.selectedOption : ''}`}
             onClick={() => handleSelect(option)}
             key={option.value}
             role="option"
